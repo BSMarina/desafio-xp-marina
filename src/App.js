@@ -2,12 +2,16 @@ import React from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
+import Wallet from './pages/Wallet';
+import Market from './pages/Market';
 
 
 function App() {
   return (
     <Routes>
-      <Route path='/' element={ <Login/> }/>
+      <Route exact path='/' element={ <Login/> }/>
+      <Route path='/carteira' element={ <Wallet/> }/>
+      <Route path='/mercado' element={ <Market/> }/>
     </Routes>
     );
 }
