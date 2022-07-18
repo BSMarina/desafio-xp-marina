@@ -1,8 +1,8 @@
 import React, { useState,
     // useEffect,
  } from 'react';
-// import { useHistory } from 'react-router-dom';
 import xpincLogo from '../images/xpincLogo.png'
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [inputText, setInputText] = useState({
@@ -11,6 +11,8 @@ export default function Login() {
   });
 
   const [button, setButton] = useState({ isDisable: true });
+
+  const navigate = useNavigate();
 
 //   useEffect(() => {
 //     const validateLogin = () => {
@@ -48,13 +50,8 @@ export default function Login() {
     verifyLogin()
   };
 
-//   const { push } = useHistory();
   const handleClick = () => {
-    // localStorage.setItem('mealsToken', '1');
-    // localStorage.setItem('cocktailsToken', '1');
-    // localStorage.setItem('user', JSON.stringify({ email: inputText.email }));
-    // push('/foods');
-    console.log('clicou!')
+    navigate('/carteira')
   };
 
   return (
