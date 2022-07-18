@@ -18,11 +18,11 @@ export default function Header() {
       <header
     //    className={ styles.Header }
       >
-        <button handleClick={ handleMenu }>
+        <button onClick={ handleMenu }>
           <img src={ iconMenu } alt="Ícone de menu" />
         </button>
         <h2>{ userEmail }</h2> 
-        <button handleClick={ handleTransaction }>
+        <button onClick={ handleTransaction }>
           { pathname === '/carteira' ? 'Seu saldo' : 'Investir' }
         </button>
       </header>
