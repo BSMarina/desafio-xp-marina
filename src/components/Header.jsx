@@ -1,18 +1,23 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 // import iconMenu from '../images/iconMenu.svg';
 import iconArrowBack from '../images/iconArrowBack.svg';
-import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const btnInfo = pathname === '/conta' ? 'Investir' : 'Seu saldo';
+  const navAccount = ['/saque', '/deposito'];
+  const btnInfo = navAccount.includes(pathname) ? 'Investir' : 'Seu saldo';
+
+//   useEffect(() => {
+
+    
+// }, []);
 
   const handleTransaction = ({target}) => {
       if (target.value === 'Seu saldo') {
-        navigate('/conta')
+        navigate('/saque')
       }
       if (target.value === 'Investir') {
         navigate('/mercado')

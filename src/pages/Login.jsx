@@ -1,6 +1,4 @@
-import React, { useState,
-    // useEffect,
- } from 'react';
+import React, { useState, useEffect } from 'react';
 import xpincLogo from '../images/xpincLogo.png'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -17,40 +15,39 @@ export default function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch()
 
-//   useEffect(() => {
-//     const validateLogin = () => {
-//       const MAX_CHARACTER_LENGTH = 6;
-//       const conditions = [
-//         /^[a-z._-\d]{3,26}@[a-z]{3,16}\.[a-z]{2,3}$/i.test(inputText.email),
-//         inputText.password.length > MAX_CHARACTER_LENGTH,
-//       ];
+  useEffect(() => {
+    const validateLogin = () => {
+      const MAX_CHARACTER_LENGTH = 6;
+      const conditions = [
+        /^[a-z._-\d]{3,26}@[a-z]{3,16}\.[a-z]{2,3}$/i.test(inputText.email),
+        inputText.password.length > MAX_CHARACTER_LENGTH,
+      ];
 
-//       setButton({ isDisable: conditions.includes(false) });
-//     };
-//     validateLogin();
-//   }, [inputText]);
+      setButton({ isDisable: conditions.includes(false) });
+    };
+    validateLogin();
+  }, [inputText]);
 
-  const verifyLogin = () => {
-    const minLength = 6;
-    // Regex encontrado em https://stackoverflow.com/a/9204568 e explicação dele aqui https://tinyurl.com/yanwzcrs
-    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (inputText.password.length < minLength || !validEmail.test(inputText.email)) {
-      setButton({
-        isDisabled: true,
-      });
-    } else {
-      setButton({
-        isDisabled: false,
-      });
-    }
-  }
+  // const verifyLogin = () => {
+  //   const minLength = 6;
+  //   // Regex encontrado em https://stackoverflow.com/a/9204568 e explicação dele aqui https://tinyurl.com/yanwzcrs
+  //   const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   if (inputText.password.length < minLength || !validEmail.test(inputText.email)) {
+  //     setButton({
+  //       isDisabled: true,
+  //     });
+  //   } else {
+  //     setButton({
+  //       isDisabled: false,
+  //     });
+  //   }
+  // }
 
   const handleChange = ({ name, value }) => {
     setInputText((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-    verifyLogin()
   };
 
   const handleClick = () => {
@@ -88,7 +85,7 @@ export default function Login() {
           />
         <button
           buttonName="Login"
-          isDisabled={ button.isDisable }
+          disabled={ button.isDisable }
           type="button"
           onClick={ handleClick }>
             Login

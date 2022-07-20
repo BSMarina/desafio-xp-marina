@@ -1,4 +1,4 @@
-[
+const stockData = [
     {
         "name": "BMFBOVESPA:PRIO3",
         "description": "PETRORIO",
@@ -120,3 +120,5 @@
         "about": "RUMO SA engages in the provision of logistics services. It offers integrated transport solution, handling, storage, and shipment from the production centers to the main southern and southeast ports. It operates through the following segments: Northern Operations, South Operations, and Container Operations. The North Operations segment comprises of the railway operations, road operations, transshipment and port elevation in the areas of the company concession, Elevações Portuárias, Rumo Malha Norte, and Rumo Malha Paulista. The South Operations segment covers railway and transshipment in the concession area of Rumo Malha Sul, and Rumo Malha Oeste. The Container Operations segment refers to the group company that focuses on container logistics either by rail or road transport, and other container operations results. The company was founded on September 30, 1997 and is headquartered in Curitiba, Brazil."
     }
 ]
+
+export default stockData;

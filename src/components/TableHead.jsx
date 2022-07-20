@@ -6,6 +6,7 @@ export default function TableHead() {
             <th>Ação</th>
             <th>Quantidade</th>
             <th>Valor</th>
+            <th>Variação</th>
         </tr>
     )
 }
