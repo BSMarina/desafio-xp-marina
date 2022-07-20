@@ -1,15 +1,17 @@
 import React from "react";
+import AccountInfo from "../components/AccountInfo";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
-import StockTable from "../components/StockTable";
+import Transaction from "../components/Transaction";
 
-export default function Wallet() {
+export default function Account() {
     return(
         <>
         <Header />
         <main>
             <NavBar />
-            <StockTable/>
+            <AccountInfo />
+            <Transaction />
         </main>
         </>
     )

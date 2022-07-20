@@ -3,6 +3,8 @@ import React, { useState,
  } from 'react';
 import xpincLogo from '../images/xpincLogo.png'
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { login } from '../redux/user';
 
 export default function Login() {
   const [inputText, setInputText] = useState({
@@ -13,6 +15,7 @@ export default function Login() {
   const [button, setButton] = useState({ isDisable: true });
 
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
 //   useEffect(() => {
 //     const validateLogin = () => {
@@ -51,6 +54,8 @@ export default function Login() {
   };
 
   const handleClick = () => {
+    const { email } = inputText;
+    dispatch(login(email))
     navigate('/carteira')
   };
 

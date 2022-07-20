@@ -1,29 +1,36 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import iconMenu from '../images/iconMenu.svg'
+// import iconMenu from '../images/iconMenu.svg';
+import iconArrowBack from '../images/iconArrowBack.svg';
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const { pathname } = useLocation();
-  const handleMenu = () => {
-      console.log('clicou no menu!')
+  const navigate = useNavigate();
+  const btnInfo = pathname === '/conta' ? 'Investir' : 'Seu saldo';
+
+  const handleTransaction = ({target}) => {
+      if (target.value === 'Seu saldo') {
+        navigate('/conta')
+      }
+      if (target.value === 'Investir') {
+        navigate('/mercado')
+      }
   }
 
-  const handleTransaction = () => {
-      console.log('clicou no botão de transação!')
-  }
-
-  const userEmail = 'fulano@email.com' // pegar do store do redux, coletado no login
+  const userEmail = useSelector((state) => state.user.email)
 
   return (
       <header
     //    className={ styles.Header }
       >
-        <button onClick={ handleMenu }>
-          <img src={ iconMenu } alt="Ícone de menu" />
+        <button onClick={ () => navigate(-1) }>
+          <img src={ iconArrowBack } alt="Ícone de seta para voltar" />
         </button>
         <h2>{ userEmail }</h2> 
-        <button onClick={ handleTransaction }>
-          { pathname === '/carteira' ? 'Seu saldo' : 'Investir' }
+        <button onClick={ handleTransaction } value={ btnInfo }>
+          { btnInfo }
         </button>
       </header>
   );
