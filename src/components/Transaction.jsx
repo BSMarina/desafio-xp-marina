@@ -1,21 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { buy } from '../redux/wallet';
 import { get } from '../redux/market';
 
 export default function Transaction() {
+    const [inputValue, setInputValue] = useState({ amount: 0});
+    const [button, setButton] = useState({ isDisable: true });
+
     const { pathname } = useLocation();
+
     const stocks = useSelector((state) => state.market.stocks);
     const chosenStock = useSelector((state) => state.market.chosenStock);
     const userStocks = useSelector((state) => state.wallet.userStocks);
     const dispatch = useDispatch();
- 
-    const [inputValue, setInputValue] = useState({ amount: 0});
 
-    const handleChange = ({ target }) => {
-        setInputValue({ amount: target.value });
+    useEffect(() => {
+        const validateInputValue = () => {
+          const conditions = [ inputValue.amount > 0];
+    
+          setButton({ isDisable: conditions.includes(false) });
         };
+        validateInputValue();
+      }, [inputValue]);
+
+    // const handleChange = ({ target }) => {
+    //     setInputValue({ amount: target.value });
+    //     };
+
+    const handleChange = ({ value }) => {
+        setInputValue((prevState) => ({
+          ...prevState,
+          amount: value,
+        }));
+      };
 
     const buyStock = () => {
         const formatNewStock = {amount: +(inputValue.amount), ...chosenStock};
@@ -50,8 +68,8 @@ export default function Transaction() {
     }
     return (
         <div>
-            <input type='number' placeholder='Insira o valor' onChange={ handleChange }/>
-            <button onClick={ handleClick }>Confirmar</button>
+            <input type='number' placeholder='Insira o valor' onChange={ ({ target }) => handleChange(target) } value={ inputValue.amount }/>
+            <button onClick={ handleClick } disabled={ button.isDisable }>Confirmar</button>
         </div>
     )
 }
