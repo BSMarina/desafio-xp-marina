@@ -12,12 +12,6 @@ export const walletSlice = createSlice({
       state.value += 1 //implementar ação de venda
     },
     buy: (state, action) => {
-      // const alreadyBought = state.userStocks.find((stock) => stock.simbol === action.payload.simbol);
-
-      // if (alreadyBought) {
-      //   state.userStocks.quantity += 1
-
-      // }
       return state = {...state, userStocks: action.payload}
     },
   },

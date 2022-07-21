@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import TableHead from './TableHead';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -12,20 +12,19 @@ export default function StockTable() {
     //     return stocksInfo;
     // }
     const stocks = useSelector((state) => state.market.stocks);
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const handleClick = ({target}) => {
-        console.log('value do target no handle click', target)
         const chosenStock = stocks.find((stock) => stock.simbol === target.value);
-        console.log('resultado do find no stock table', chosenStock)
-        dispatch(chose(chosenStock))
-        navigate('/compra')
+        dispatch(chose(chosenStock));
+        navigate('/compra');
     }
     
-    useEffect(() => {
-        console.log('stocks no stocktabel', stocks)
-    }, [stocks])
+    // useEffect(() => {
+    //     console.log('stocks no stocktabel', stocks)
+    // }, [stocks])
 
     return (
         <table>
