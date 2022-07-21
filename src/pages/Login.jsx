@@ -28,20 +28,6 @@ export default function Login() {
     validateLogin();
   }, [inputText]);
 
-  // const verifyLogin = () => {
-  //   const minLength = 6;
-  //   // Regex encontrado em https://stackoverflow.com/a/9204568 e explicação dele aqui https://tinyurl.com/yanwzcrs
-  //   const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  //   if (inputText.password.length < minLength || !validEmail.test(inputText.email)) {
-  //     setButton({
-  //       isDisabled: true,
-  //     });
-  //   } else {
-  //     setButton({
-  //       isDisabled: false,
-  //     });
-  //   }
-  // }
 
   const handleChange = ({ name, value }) => {
     setInputText((prevState) => ({
