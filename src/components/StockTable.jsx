@@ -15,13 +15,15 @@ export default function StockTable() {
     const { pathname } = useLocation();
 
     const handleClick = ({target}) => {
-        const chosenStock = stocks.find((stock) => stock.simbol === target.value);
-        dispatch(chose(chosenStock));
         if (pathname === '/carteira') {
+            const chosenUserStock = userStocks.find((stock) => stock.simbol === target.value);
+            dispatch(chose(chosenUserStock));
             navigate('/venda');
         }
 
         if (pathname === '/mercado') {
+            const chosenStock = stocks.find((stock) => stock.simbol === target.value);
+            dispatch(chose(chosenStock));
             navigate('/compra');
         }
     }
