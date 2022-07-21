@@ -18,20 +18,27 @@ export default function Transaction() {
         };
 
     const buyStock = () => {
-        
-        if (userStocks) { 
+        const formatNewStock = {amount: +(inputValue.amount), ...chosenStock};
+
+        if (userStocks.length !== 0) { 
             const verifyStock = userStocks.find((stock) => chosenStock.simbol === stock.simbol);
             console.log('verify stock', verifyStock)
-            if (verifyStock) { 
-                const formatStock = {amount: verifyStock.amount + inputValue.amount, ...chosenStock};
+
+            if (!verifyStock) {
+                console.log('ações do user no estado', Array.isArray(userStocks)) 
+                const newUserStocks = userStocks.concat([formatNewStock]);
+                dispatch(buy(newUserStocks));
+            } else {
+                const formatStock = {amount: +(verifyStock.amount) + +(inputValue.amount), ...chosenStock};
                 const newUserStocks = userStocks.filter((stock) => verifyStock.simbol !== stock.simbol);
                 newUserStocks.push(formatStock);
-                dispatch(buy(newUserStocks));
-            }
+                dispatch(buy(newUserStocks));}
         }
 
-        const formatNewStock = {amount: inputValue.amount, ...chosenStock};
-        dispatch(buy(formatNewStock));
+        if (userStocks.length === 0) {
+            dispatch(buy([formatNewStock]));
+        }
+        
     }
 
     const handleClick = () => {

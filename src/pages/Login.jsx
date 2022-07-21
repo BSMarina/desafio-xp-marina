@@ -84,7 +84,6 @@ export default function Login() {
             autoComplete="off"
           />
         <button
-          buttonName="Login"
           disabled={ button.isDisable }
           type="button"
           onClick={ handleClick }>

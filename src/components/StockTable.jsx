@@ -35,7 +35,7 @@ export default function StockTable() {
                         {/* <td>{ valor vindo de info do usuário }}</td> */}
                         <td>{`R$ ${stock.value}`}</td>
                         <td>{`R$ ${stock.variation}`}</td>
-                        <button value={ stock.simbol } onClick={ handleClick }>Negociar</button>
+                        <td><button value={ stock.simbol } onClick={ handleClick }>Negociar</button></td>
                     </tr>
         ))}
         </table> 
