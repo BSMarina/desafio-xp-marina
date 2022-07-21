@@ -10,11 +10,6 @@ export default function Header() {
   const navAccount = ['/saque', '/deposito'];
   const btnInfo = navAccount.includes(pathname) ? 'Investir' : 'Seu saldo';
 
-//   useEffect(() => {
-
-    
-// }, []);
-
   const handleTransaction = ({target}) => {
       if (target.value === 'Seu saldo') {
         navigate('/saque')
