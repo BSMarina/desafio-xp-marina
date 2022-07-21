@@ -2,10 +2,14 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export const marketSlice = createSlice({
   name: 'market',
-  initialState: { stocks: [] }, //definir estado inicial depois
+  initialState: { stocks: [], chosenStock: {} }, //definir estado inicial depois
   reducers: {
     get: (state, action) => {
       return state = {...state, stocks: action.payload}
+    },
+
+    chose: (state, action) => {
+      return state = {...state, chosenStock: action.payload}
     },
 
     buy: (state) => {
@@ -18,6 +22,6 @@ export const marketSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { get, buy } = marketSlice.actions;
+export const { get, chose, buy } = marketSlice.actions;
 
 export default marketSlice.reducer;

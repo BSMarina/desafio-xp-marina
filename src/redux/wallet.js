@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export const walletSlice = createSlice({
   name: 'wallet',
-  initialState: 0, //definir estado inicial depois
+  initialState: {userStocks: []}, //definir estado inicial depois
   reducers: {
     sell: (state) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
@@ -11,12 +11,15 @@ export const walletSlice = createSlice({
       // immutable state based off those changes
       state.value += 1 //implementar ação de venda
     },
-    buy: (state) => {
-      state.value -= 1 //implementar ação de compra
+    buy: (state, action) => {
+      // const alreadyBought = state.userStocks.find((stock) => stock.simbol === action.payload.simbol);
+
+      // if (alreadyBought) {
+      //   state.userStocks.quantity += 1
+
+      // }
+      return state = {...state, userStocks: action.payload}
     },
-    // incrementByAmount: (state, action) => {
-    //   state.value += action.payload
-    // },
   },
 })
 

@@ -9,8 +9,8 @@ export default function Deposit() {
         <>
         <Header />
         <main>
-            <NavBar />
             <AccountInfo />
+            <NavBar />
             <Transaction />
         </main>
         </>

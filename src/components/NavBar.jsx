@@ -14,6 +14,8 @@ export default function NavBar() {
     useEffect(() => {
         const navBarAccount = ['/deposito', '/saque'];
         const navBarWallet = ['/carteira', '/mercado'];
+        const navBarMarket = ['/compra', '/venda'];
+
 
         if (navBarAccount.includes(pathname)) {
             setNavType({
@@ -30,6 +32,15 @@ export default function NavBar() {
                 nameA: 'Minha Carteira',
                 typeB: '/mercado',
                 nameB: 'Mercado',
+            })
+        }
+
+        if (navBarMarket.includes(pathname)) {
+            setNavType({
+                typeA: '/compra',
+                nameA: 'Comprar',
+                typeB: '/venda',
+                nameB: 'Vender',
             })
         }
         
