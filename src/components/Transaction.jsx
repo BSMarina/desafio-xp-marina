@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { buySell, deposit } from '../redux/wallet';
+import { buySell, deposit, withdraw } from '../redux/wallet';
 import { get } from '../redux/market';
 
 export default function Transaction() {
@@ -86,9 +86,9 @@ export default function Transaction() {
         dispatch(deposit(+(inputValue.amount)))
     }  
     
-    // const withdraw = () => {
-    //     dispatch(updateAccount(+(inputValue.amount)))
-    // }  
+    const withdrawFunc = () => {
+        dispatch(withdraw(+(inputValue.amount)))
+    }  
 
 
     const handleClick = () => {
@@ -106,6 +106,10 @@ export default function Transaction() {
 
         if (pathname === '/deposito') {
             depositFunc();
+        }
+
+        if (pathname === '/saque') {
+            withdrawFunc();
         }
     }
 

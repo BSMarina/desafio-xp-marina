@@ -9,11 +9,14 @@ export const walletSlice = createSlice({
     },
     deposit: (state, action) => {
       state.userAccount += action.payload
+    },
+    withdraw: (state, action) => {
+      state.userAccount -= action.payload
     }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { buySell, deposit } = walletSlice.actions
+export const { buySell, deposit, withdraw } = walletSlice.actions
 
 export default walletSlice.reducer
