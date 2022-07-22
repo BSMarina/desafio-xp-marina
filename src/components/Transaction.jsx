@@ -17,14 +17,16 @@ export default function Transaction() {
 
     useEffect(() => {
         const verifySell = () => {
-            const verifyStock = userStocks.find((stock) => chosenStock.simbol === stock.simbol);
-            if (pathname === '/venda' && +(verifyStock.amount) < +(inputValue.amount)) {
-                return false
+            if (userStocks.length > 0) {
+                const verifyStock = userStocks.find((stock) => chosenStock.simbol === stock.simbol);
+                if (pathname === '/venda' && +(verifyStock.amount) < +(inputValue.amount)) {
+                    return false
+                }
             }
             return true
         }
         const validateInputValue = () => {
-            const conditions = [ inputValue.amount > 0, userStocks.length > 0 ? verifySell() : false];
+            const conditions = [ inputValue.amount > 0, verifySell()];
     
             setButton({ isDisable: conditions.includes(false) });
         };
@@ -63,21 +65,19 @@ export default function Transaction() {
         
     }
 
-    const sellStock = () => {
+    const sellStock = async () => {
             const verifyStock = userStocks.find((stock) => chosenStock.simbol === stock.simbol);
-            console.log('verify stock', verifyStock)
-            // const stockIndex = userStocks.indexOf(verifyStock);
+            const formatStock = {amount: +(verifyStock.amount) - +(inputValue.amount), ...chosenStock};
+            const newUserStocks = userStocks.filter((stock) => verifyStock.simbol !== stock.simbol);
             
-            //     console.log('ações do user no estado', Array.isArray(userStocks)) 
-            //     const newUserStocks = userStocks.concat([formatNewStock]);
-            //     dispatch(buy(newUserStocks));
-            // } else {
-                const formatStock = {amount: +(verifyStock.amount) - +(inputValue.amount), ...chosenStock};
-                const newUserStocks = userStocks.filter((stock) => verifyStock.simbol !== stock.simbol);
-                if (+(verifyStock.amount) > +(inputValue.amount)) {
+            if (+(verifyStock.amount) > +(inputValue.amount)) {
                 newUserStocks.push(formatStock);
                 dispatch(buy(newUserStocks));
             } else if (+(verifyStock.amount) === +(inputValue.amount)) {
+                const newStocks = [...stocks];
+                await newStocks.push(chosenStock)
+                console.log('newStocks', newStocks)
+                dispatch(get(newStocks));
                 dispatch(buy(newUserStocks));
             }
     }
@@ -100,7 +100,12 @@ export default function Transaction() {
     }
     return (
         <div>
-            <input type='number' placeholder='Insira o valor' onChange={ ({ target }) => handleChange(target) } value={ inputValue.amount }/>
+            <input 
+                type='number'
+                placeholder='Insira o valor'
+                onChange={ ({ target }) => handleChange(target) }
+                value={ inputValue.amount }
+            />        
             <button onClick={ handleClick } disabled={ button.isDisable }>Confirmar</button>
         </div>
     )
