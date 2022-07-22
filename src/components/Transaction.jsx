@@ -18,7 +18,7 @@ export default function Transaction() {
 
     useEffect(() => {
         const verifyBuy = () => {
-            if (pathname === '/compra' && +(chosenStock.value) > userAccount ) {
+            if (pathname === '/compra' && (+(chosenStock.value) * +(inputValue.amount)) > userAccount ) {
                 return false
             }
             return true
@@ -97,6 +97,7 @@ export default function Transaction() {
                 dispatch(get(newStocks));
                 dispatch(buySell(newUserStocks));
             }
+            dispatch(deposit(+(chosenStock.value) * +(inputValue.amount)))
     }
 
     const depositFunc = () => {
