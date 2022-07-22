@@ -125,7 +125,8 @@ export default function Transaction() {
     }  
 
 
-    const handleClick = () => {
+    const handleClick = (e) => {
+        e.preventDefault()
         if (pathname === '/compra') {
             buyStock();
             const filteredStocks = stocks.filter((stock) => stock.simbol !== chosenStock.simbol);
@@ -148,7 +149,7 @@ export default function Transaction() {
     }
 
     return (
-        <div>
+        <form>
             <input 
                 type='number'
                 placeholder='Insira o valor'
@@ -156,6 +157,6 @@ export default function Transaction() {
                 value={ inputValue.amount }
             />        
             <button onClick={ handleClick } disabled={ button.isDisable }>{ button.btnText }</button>
-        </div>
+        </form>
     )
 }
