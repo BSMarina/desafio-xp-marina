@@ -24,6 +24,10 @@ export default function Transaction() {
         validateInputValue();
       }, [inputValue]);
 
+    // const handleChange = ({ target }) => {
+    //     setInputValue({ amount: target.value });
+    //     };
+
     const handleChange = ({ value }) => {
         setInputValue((prevState) => ({
           ...prevState,
@@ -33,7 +37,6 @@ export default function Transaction() {
 
     const buyStock = () => {
         const formatNewStock = {amount: +(inputValue.amount), ...chosenStock};
-        console.log('format new stock', formatNewStock)
 
         if (userStocks.length !== 0) { 
             const verifyStock = userStocks.find((stock) => chosenStock.simbol === stock.simbol);
@@ -56,33 +59,9 @@ export default function Transaction() {
         
     }
 
-    const sellStock = () => {
-            const verifyStock = userStocks.find((stock) => chosenStock.simbol === stock.simbol);
-            console.log('verify stock', verifyStock)
-            // const stockIndex = userStocks.indexOf(verifyStock);
-            if (+(verifyStock.amount) > +(inputValue.amount)) {
-            //     console.log('ações do user no estado', Array.isArray(userStocks)) 
-            //     const newUserStocks = userStocks.concat([formatNewStock]);
-            //     dispatch(buy(newUserStocks));
-            // } else {
-                const formatStock = {amount: +(verifyStock.amount) - +(inputValue.amount), ...chosenStock};
-                const newUserStocks = userStocks.filter((stock) => verifyStock.simbol !== stock.simbol);
-                newUserStocks.push(formatStock);
-                dispatch(buy(newUserStocks));}
-    }
-
-        
-
-
     const handleClick = () => {
         if (pathname === '/compra') {
             buyStock();
-            const filteredStocks = stocks.filter((stock) => stock.simbol !== chosenStock.simbol);
-            dispatch(get(filteredStocks));
-        }
-
-        if (pathname === '/venda') {
-            sellStock();
             const filteredStocks = stocks.filter((stock) => stock.simbol !== chosenStock.simbol);
             dispatch(get(filteredStocks));
         }
