@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { buy } from '../redux/wallet';
+import { buySell } from '../redux/wallet';
 import { get } from '../redux/market';
 
 export default function Transaction() {
@@ -51,16 +51,16 @@ export default function Transaction() {
             if (!verifyStock) {
                 console.log('ações do user no estado', Array.isArray(userStocks)) 
                 const newUserStocks = userStocks.concat([formatNewStock]);
-                dispatch(buy(newUserStocks));
+                dispatch(buySell(newUserStocks));
             } else {
                 const formatStock = {amount: +(verifyStock.amount) + +(inputValue.amount), ...chosenStock};
                 const newUserStocks = userStocks.filter((stock) => verifyStock.simbol !== stock.simbol);
                 newUserStocks.push(formatStock);
-                dispatch(buy(newUserStocks));}
+                dispatch(buySell(newUserStocks));}
         }
 
         if (userStocks.length === 0) {
-            dispatch(buy([formatNewStock]));
+            dispatch(buySell([formatNewStock]));
         }
         
     }
@@ -72,13 +72,13 @@ export default function Transaction() {
             
             if (+(verifyStock.amount) > +(inputValue.amount)) {
                 newUserStocks.push(formatStock);
-                dispatch(buy(newUserStocks));
+                dispatch(buySell(newUserStocks));
             } else if (+(verifyStock.amount) === +(inputValue.amount)) {
                 const newStocks = [...stocks];
                 await newStocks.push(chosenStock)
                 console.log('newStocks', newStocks)
                 dispatch(get(newStocks));
-                dispatch(buy(newUserStocks));
+                dispatch(buySell(newUserStocks));
             }
     }
 

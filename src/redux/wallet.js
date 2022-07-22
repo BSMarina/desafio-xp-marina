@@ -11,13 +11,13 @@ export const walletSlice = createSlice({
       // immutable state based off those changes
       state.value += 1 //implementar ação de venda
     },
-    buy: (state, action) => {
+    buySell: (state, action) => {
       return state = {...state, userStocks: action.payload}
     },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { sell, buy } = walletSlice.actions
+export const { sell, buySell } = walletSlice.actions
 
 export default walletSlice.reducer
