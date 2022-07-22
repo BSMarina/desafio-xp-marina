@@ -16,20 +16,27 @@ export default function Transaction() {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        const verifySell = () => {
+            const verifyStock = userStocks.find((stock) => chosenStock.simbol === stock.simbol);
+            if (pathname === '/venda' && +(verifyStock.amount) < +(inputValue.amount)) {
+                return false
+            }
+            return true
+        }
         const validateInputValue = () => {
-          const conditions = [ inputValue.amount > 0];
+            const conditions = [ inputValue.amount > 0, verifySell()];
     
-          setButton({ isDisable: conditions.includes(false) });
+            setButton({ isDisable: conditions.includes(false) });
         };
         validateInputValue();
-      }, [inputValue]);
+    }, [inputValue, chosenStock.simbol, pathname, userStocks]);
 
     const handleChange = ({ value }) => {
         setInputValue((prevState) => ({
-          ...prevState,
-          amount: value,
+            ...prevState,
+            amount: value,
         }));
-      };
+    };
 
     const buyStock = () => {
         const formatNewStock = {amount: +(inputValue.amount), ...chosenStock};
