@@ -146,6 +146,7 @@ export default function Transaction() {
         if (pathname === '/saque') {
             withdrawFunc();
         }
+        setInputValue({ amount: 0});
     }
 
     return (
