@@ -6,7 +6,8 @@ import { get } from '../redux/market';
 
 export default function Transaction() {
     const [inputValue, setInputValue] = useState({ amount: 0});
-    const [button, setButton] = useState({ isDisable: true });
+    const [button, setButton] = useState({ isDisable: true, btnText: 'Confirmar' });
+    // const [btnText, setBtnText] = useState({ btnText: 'Confirmar'})
 
     const { pathname } = useLocation();
 
@@ -44,7 +45,10 @@ export default function Transaction() {
         const validateInputValue = () => {
             const conditions = [ inputValue.amount > 0, verifyBuy(), verifySell(), verifyAccount()];
     
-            setButton({ isDisable: conditions.includes(false) });
+            setButton((prevState) => ({
+                 ...prevState, 
+                 isDisable: conditions.includes(false),
+                 }));
         };
         validateInputValue();
     }, [inputValue, chosenStock.simbol, chosenStock.value, pathname, userStocks, userAccount]);
@@ -139,7 +143,7 @@ export default function Transaction() {
                 onChange={ ({ target }) => handleChange(target) }
                 value={ inputValue.amount }
             />        
-            <button onClick={ handleClick } disabled={ button.isDisable }>Confirmar</button>
+            <button onClick={ handleClick } disabled={ button.isDisable }>{ button.btnText }</button>
         </div>
     )
 }
