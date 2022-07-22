@@ -15,6 +15,6 @@ export const marketSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { get, chose } = marketSlice.actions;
+export const { get, chose, update } = marketSlice.actions;
 
 export default marketSlice.reducer;
