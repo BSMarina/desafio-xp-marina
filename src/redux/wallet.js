@@ -8,7 +8,7 @@ export const walletSlice = createSlice({
       state.userStocks = action.payload
     },
     updateAccount: (state, action) => {
-      state.userAccount = action.payload
+      state.userAccount += action.payload
     }
   },
 })
