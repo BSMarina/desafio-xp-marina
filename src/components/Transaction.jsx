@@ -13,6 +13,7 @@ export default function Transaction() {
     const stocks = useSelector((state) => state.market.stocks);
     const chosenStock = useSelector((state) => state.market.chosenStock);
     const userStocks = useSelector((state) => state.wallet.userStocks);
+    const userAccount = useSelector((state) => state.wallet.userAccount);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -25,13 +26,21 @@ export default function Transaction() {
             }
             return true
         }
+
+        const verifyAccount = () => {
+            if (pathname === '/saque' && +(inputValue.amount) > userAccount ) {
+                return false
+            }
+            return true
+        }
+
         const validateInputValue = () => {
-            const conditions = [ inputValue.amount > 0, verifySell()];
+            const conditions = [ inputValue.amount > 0, verifySell(), verifyAccount()];
     
             setButton({ isDisable: conditions.includes(false) });
         };
         validateInputValue();
-    }, [inputValue, chosenStock.simbol, pathname, userStocks]);
+    }, [inputValue, chosenStock.simbol, pathname, userStocks, userAccount]);
 
     const handleChange = ({ value }) => {
         setInputValue((prevState) => ({
