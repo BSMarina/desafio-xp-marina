@@ -17,6 +17,13 @@ export default function Transaction() {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        const verifyBuy = () => {
+            if (pathname === '/compra' && +(chosenStock.value) > userAccount ) {
+                return false
+            }
+            return true
+        }
+
         const verifySell = () => {
             if (userStocks.length > 0) {
                 const verifyStock = userStocks.find((stock) => chosenStock.simbol === stock.simbol);
@@ -35,12 +42,12 @@ export default function Transaction() {
         }
 
         const validateInputValue = () => {
-            const conditions = [ inputValue.amount > 0, verifySell(), verifyAccount()];
+            const conditions = [ inputValue.amount > 0, verifyBuy(), verifySell(), verifyAccount()];
     
             setButton({ isDisable: conditions.includes(false) });
         };
         validateInputValue();
-    }, [inputValue, chosenStock.simbol, pathname, userStocks, userAccount]);
+    }, [inputValue, chosenStock.simbol, chosenStock.value, pathname, userStocks, userAccount]);
 
     const handleChange = ({ value }) => {
         setInputValue((prevState) => ({
@@ -72,6 +79,7 @@ export default function Transaction() {
             dispatch(buySell([formatNewStock]));
         }
         
+        dispatch(withdraw(+(chosenStock.value)))
     }
 
     const sellStock = async () => {
