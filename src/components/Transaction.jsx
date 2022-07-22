@@ -42,16 +42,28 @@ export default function Transaction() {
             return true
         }
 
-        const validateInputValue = () => {
+        const validateInputValue = async () => {
             const conditions = [ inputValue.amount > 0, verifyBuy(), verifySell(), verifyAccount()];
     
             setButton((prevState) => ({
-                 ...prevState, 
-                 isDisable: conditions.includes(false),
-                 }));
+                ...prevState, 
+                isDisable: conditions.includes(false),
+            }));
+            
+            if (button.isDisable) {
+                setButton((prevState) => ({
+                    ...prevState, 
+                    btnText: 'Quantia incompatível',
+                })) 
+            } else {
+                setButton((prevState) => ({
+                    ...prevState, 
+                    btnText: 'Confirmar',
+                })) 
+            }
         };
         validateInputValue();
-    }, [inputValue, chosenStock.simbol, chosenStock.value, pathname, userStocks, userAccount]);
+    }, [inputValue, chosenStock.simbol, chosenStock.value, pathname, userStocks, userAccount, button.isDisable]);
 
     const handleChange = ({ value }) => {
         setInputValue((prevState) => ({
