@@ -14,6 +14,6 @@ export const walletSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { sell, buySell } = walletSlice.actions
+export const { buySell, updateAccount } = walletSlice.actions
 
 export default walletSlice.reducer

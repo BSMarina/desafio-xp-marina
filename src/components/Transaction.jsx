@@ -82,7 +82,9 @@ export default function Transaction() {
             }
     }
 
-        
+    // const deposit = () => {
+    //     dispatch(updateAccount(+(inputValue.amount)))
+    // }    
 
 
     const handleClick = () => {
@@ -97,6 +99,10 @@ export default function Transaction() {
             const filteredStocks = stocks.filter((stock) => stock.simbol !== chosenStock.simbol);
             dispatch(get(filteredStocks));
         }
+
+        // if (pathname === '/deposito') {
+        //     deposit();
+        // }
     }
     return (
         <div>
