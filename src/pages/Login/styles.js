@@ -40,27 +40,27 @@ export const FormContent = styled.form`
         width: 40%;
         
         :hover, :focus {
-            background-color: ${({theme}) => theme.colors.background.alternative}70;
+            background-color: ${({theme}) => theme.colors.background.alternative}60;
             border: 2px solid ${({theme}) => theme.colors.elements.white};
         }
     }
 
-//     button {
-//         background-color: ${({theme}) => theme.colors.elements.main};
-//         border-radius: 5px;
-//         border-style: none;
-//         font-size: 16px;
-//         height: 36px;
-//         margin-top: 10px;
-//         width: 40%;
+    button {
+        background-color: ${({theme}) => theme.colors.elements.main};
+        border-radius: 5px;
+        border-style: none;
+        font-size: 16px;
+        height: 36px;
+        margin-top: 10px;
+        width: 40%;
         
-//         :active {
-//             background-color: ${({theme}) => theme.colors.elements.main}70;
-//         }
+        :active {
+            background-color: ${({theme}) => theme.colors.elements.main}70;
+        }
 
-//         :disabled{
-//             background-color: ${({theme}) => theme.colors.background.alternativeDarker};
-//             cursor: not-allowed;
-//         }
-//     }
-    `;
+        :disabled{
+            background-color: ${({theme}) => theme.colors.background.alternativeDarker};
+            cursor: not-allowed;
+        }
+    }
+`;
