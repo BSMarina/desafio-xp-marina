@@ -10,12 +10,12 @@ export const Container = styled.div`
     width: 100vw;
 `;
 
-// export const ImgContent = styled.div`
-//     align-items: center;
-//     display: flex;
-//     flex-direction: column;
-//     width: 50%;
-// `;
+export const ImgContent = styled.div`
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+`;
 
 // export const FormContent = styled.form`
 //     align-items: center;
