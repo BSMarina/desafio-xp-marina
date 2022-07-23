@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import TableHead from './TableHead';
+import TableHead from '../TableHead';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { chose } from '../redux/market';
+import { chose } from '../../redux/market';
 
 
 export default function StockTable() {

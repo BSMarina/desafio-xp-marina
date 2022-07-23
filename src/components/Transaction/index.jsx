@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { buySell, deposit, withdraw } from '../redux/wallet';
-import { get } from '../redux/market';
+import { buySell, deposit, withdraw } from '../../redux/wallet';
+import { get } from '../../redux/market';
 
 export default function Transaction() {
     const [inputValue, setInputValue] = useState({ amount: 0});
