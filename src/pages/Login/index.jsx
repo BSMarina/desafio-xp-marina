@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import xpincLogo from '../images/xpincLogo.png'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { login } from '../redux/user';
+import { login } from '../../redux/user';
 
 export default function Login() {
   const [inputText, setInputText] = useState({
