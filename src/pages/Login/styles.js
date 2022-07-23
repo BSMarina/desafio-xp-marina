@@ -17,13 +17,13 @@ export const ImgContent = styled.div`
     width: 50%;
 `;
 
-// export const FormContent = styled.form`
-//     align-items: center;
-//     display: flex;
-//     flex-direction: column;
-//     margin-bottom: 20px;
-//     row-gap: 14px;
-//     width: 50%;
+export const FormContent = styled.form`
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    row-gap: 14px;
+    width: 50%;
     
 //     input {
 //         background-color: transparent;
@@ -63,4 +63,4 @@ export const ImgContent = styled.div`
 //             cursor: not-allowed;
 //         }
 //     }
-    // `;
+    `;
