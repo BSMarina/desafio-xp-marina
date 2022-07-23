@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 // import iconMenu from '../images/iconMenu.svg';
-import iconArrowBack from '../images/iconArrowBack.svg';
+import iconArrowBack from '../../images/iconArrowBack.svg';
 
 export default function Header() {
   const { pathname } = useLocation();
