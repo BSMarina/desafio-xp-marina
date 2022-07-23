@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/user';
-import xpincLogo from '../../images/xpincLogo.png';
+import xpIncLogo from '../../images/xpIncLogo.svg';
 
 export default function Login() {
   const [inputText, setInputText] = useState({
@@ -52,7 +52,7 @@ export default function Login() {
         <div
         //  className={ styles.TittleApp }
          >
-          <img src={ xpincLogo } alt="Logo da XP Inc." />
+          <img src={ xpIncLogo } alt="Logo da XP Inc." />
         </div>
           <input
             type="text"
