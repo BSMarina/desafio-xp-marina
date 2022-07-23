@@ -25,25 +25,25 @@ export const FormContent = styled.form`
     row-gap: 14px;
     width: 50%;
     
-//     input {
-//         background-color: transparent;
-//         border-bottom: 2px solid ${({theme}) => theme.colors.elements.white};
-//         border-radius: 5px;
-//         border-style: none none solid none;
-//         box-shadow: none;
-//         color: ${({theme}) => theme.colors.elements.main};
-//         font-size: 16px;
-//         height: 36px;
-//         outline: none;
-//         padding-left: 10px;
-//         transition: all 0.4s ease-in-out;
-//         width: 40%;
+    input {
+        background-color: transparent;
+        border-bottom: 2px solid ${({theme}) => theme.colors.elements.white};
+        border-radius: 5px;
+        border-style: none none solid none;
+        box-shadow: none;
+        color: ${({theme}) => theme.colors.elements.main};
+        font-size: 16px;
+        height: 36px;
+        outline: none;
+        padding-left: 10px;
+        transition: all 0.4s ease-in-out;
+        width: 40%;
         
-//         :hover, :focus {
-//             background-color: ${({theme}) => theme.colors.background.alternative}70;
-//             border: 2px solid ${({theme}) => theme.colors.elements.white};
-//         }
-//     }
+        :hover, :focus {
+            background-color: ${({theme}) => theme.colors.background.alternative}70;
+            border: 2px solid ${({theme}) => theme.colors.elements.white};
+        }
+    }
 
 //     button {
 //         background-color: ${({theme}) => theme.colors.elements.main};
