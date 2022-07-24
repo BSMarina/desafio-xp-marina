@@ -22,6 +22,7 @@ export const PContainer = styled.div`
 export const Table = styled.table`
     width: 100%;
     color: ${({theme}) => theme.colors.elements.white};
+    border-spacing: 4px;
 
     tr {
         height: 40px;
@@ -36,7 +37,10 @@ export const Table = styled.table`
         }
 
         td:last-of-type {
-            text-align: center;
+            display: flex;
+            justify-content: end;
+            height: 40px;
+            align-items: center;
         }
 
         ::after {
@@ -67,7 +71,7 @@ export const Table = styled.table`
         display: flex;
         justify-content: center;
         height: 24px;
-        width: 100%;
+        width: 24px;
         align-items: center;
     }
 
