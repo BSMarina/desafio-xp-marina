@@ -3,10 +3,8 @@ import TableHead from '../TableHead';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { choose } from '../../redux/market';
-import exchangeIcon from '../../assets/images/exchangeIcon.svg'
 
 import * as SC from './styles'
-
 
 export default function StockTable() {
     const stocks = useSelector((state) => state.market.stocks);
@@ -58,7 +56,7 @@ export default function StockTable() {
                             { stock.amount ? <td>{ stock.amount }</td> : null }
                             <td>{`R$ ${stock.value}`}</td>
                             <td className={ stock.variation.slice(0, 1) === '+' ?'positive' :'negative'}>{`R$ ${stock.variation}`}</td>
-                            <td><button value={ stock.symbol } onClick={ handleClick }><img src={ exchangeIcon } alt='Ícone de negociar'></img></button></td>
+                            <td><button value={ stock.symbol } onClick={ handleClick }>⇄</button></td>
                         </tr>
                         ))
                         }

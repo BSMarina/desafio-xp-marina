@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+// import test from '../../assets/images/test.png'
 
 export const PContainer = styled.div`
     background-color: ${({theme}) => theme.colors.background.alternativeDarker};
     display: flex;
     height: 100%;
     flex-grow: 1;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
     align-items: center;
     margin: 16px auto;
@@ -28,11 +29,6 @@ export const Table = styled.table`
 
         :first-of-type {
             height: auto;
-
-            /* th {
-                padding-bottom: 8px;
-                text-transform: uppercase;
-            } */
 
             ::after {
                 background-color: transparent;
@@ -72,6 +68,7 @@ export const Table = styled.table`
         justify-content: center;
         height: 24px;
         width: 100%;
+        align-items: center;
     }
 
     .positive {
