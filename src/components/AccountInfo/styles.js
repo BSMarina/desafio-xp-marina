@@ -23,18 +23,18 @@ export const AccountContent = styled.div`
     }
 `;
 
-// export const ValueContent = styled.div`
-//     display: flex;
-//     flex-direction: column;
+export const ValueContent = styled.div`
+    display: flex;
+    flex-direction: column;
 
-//     h3 {
-//         font-size: 0.675rem;
-//         text-transform: uppercase;
-//         color: ${({theme}) => theme.colors.elements.dark};
-//     }
+    h3 {
+        font-size: 0.675rem;
+        text-transform: uppercase;
+        color: ${({theme}) => theme.colors.elements.dark};
+    }
 
-//     p {
-//         font-size: 1.125rem;
-//     }
+    p {
+        font-size: 1.125rem;
+    }
     
-// `;
+`;
