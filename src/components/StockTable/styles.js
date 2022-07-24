@@ -68,4 +68,12 @@ export const Table = styled.table`
         width: 100%;
     }
 
+    .positive {
+        color: ${({theme}) => theme.colors.stocks.positive}
+    }
+
+    .negative {
+        color: ${({theme}) => theme.colors.stocks.negative}
+    }
+
 `;

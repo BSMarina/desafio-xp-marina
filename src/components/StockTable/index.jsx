@@ -57,7 +57,7 @@ export default function StockTable() {
                             <td>{stock.simbol}</td>
                             { stock.amount ? <td>{ stock.amount }</td> : null }
                             <td>{`R$ ${stock.value}`}</td>
-                            <td>{`R$ ${stock.variation}`}</td>
+                            <td className={ stock.variation.slice(0, 1) === '+' ?'positive' :'negative'}>{`R$ ${stock.variation}`}</td>
                             <td><button value={ stock.simbol } onClick={ handleClick }><img src={ exchangeIcon } alt='Ícone de negociar'></img></button></td>
                         </tr>
                         ))

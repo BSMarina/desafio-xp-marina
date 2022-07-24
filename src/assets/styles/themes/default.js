@@ -12,7 +12,11 @@ const defaultTheme = {
             dark: '#8d9185',
             darker: '#636363',
         },
-    },
+        stocks: {
+            positive: '#54D088',
+            negative: '#CC3333',
+        },
+    }
 };
 
 export default defaultTheme;
