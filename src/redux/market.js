@@ -8,13 +8,13 @@ export const marketSlice = createSlice({
       state.stocks = action.payload;
     },
 
-    chose: (state, action) => {
+    choose: (state, action) => {
       state.chosenStock = action.payload;
     },
   }
 })
 
 // Action creators are generated for each case reducer function
-export const { get, chose } = marketSlice.actions;
+export const { get, choose } = marketSlice.actions;
 
 export default marketSlice.reducer;
