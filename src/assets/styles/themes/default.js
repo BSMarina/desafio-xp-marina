@@ -14,7 +14,7 @@ const defaultTheme = {
         },
         stocks: {
             positive: '#54D088',
-            negative: '#CC3333',
+            negative: '#ff5454',
         },
     }
 };

@@ -29,13 +29,13 @@ export const Table = styled.table`
         :first-of-type {
             height: auto;
 
-            th {
+            /* th {
                 padding-bottom: 8px;
                 text-transform: uppercase;
-            }
+            } */
 
             ::after {
-                background-color: ${({theme}) => theme.colors.elements.main};
+                background-color: transparent;
             }
         }
 
@@ -53,11 +53,17 @@ export const Table = styled.table`
             background-color: ${({theme}) => theme.colors.elements.white}20;
             left: 0;
         }
+        
+        th {
+            padding-bottom: 8px;
+            text-transform: uppercase;
+            text-align: left;
+            font-size: 0.675rem;
+            font-weight: 400;
+            color: ${({theme}) => theme.colors.elements.darker};
+        }
     }
 
-    th {
-        text-align: left;
-    }
 
     button {
         background-color: ${({theme}) => theme.colors.elements.main};
