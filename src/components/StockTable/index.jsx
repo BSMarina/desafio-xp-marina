@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { chose } from '../../redux/market';
 
+import * as SC from './styles'
+
 
 export default function StockTable() {
     const stocks = useSelector((state) => state.market.stocks);
@@ -45,10 +47,11 @@ export default function StockTable() {
     return (
         <>
             { toRender.stocks.length === 0 
-                ? <p>Você ainda não tem ações</p>
-                : <table>
-                    <TableHead /> 
-                    { toRender.stocks.map((stock) => (
+                ? <SC.PContainer><p>Você ainda não tem ações</p></SC.PContainer>
+                : <SC.PContainer>
+                    <table>
+                        <TableHead /> 
+                        { toRender.stocks.map((stock) => (
                         <tr key={ stock.simbol }>
                             <td>{stock.simbol}</td>
                             { stock.amount ? <td>{ stock.amount }</td> : null }
@@ -56,9 +59,10 @@ export default function StockTable() {
                             <td>{`R$ ${stock.variation}`}</td>
                             <td><button value={ stock.simbol } onClick={ handleClick }>Negociar</button></td>
                         </tr>
-                    ))
-                    }
-                </table>
+                        ))
+                        }
+                    </table>
+                </SC.PContainer>
             }
         </> 
     )
