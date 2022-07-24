@@ -18,11 +18,11 @@ export default function Wallet() {
 
     return(
         <Wrapper>
-        <Header />
-        <main>
-            <NavBar />
-            <StockTable/>
-        </main>
+            <Header />
+            <main>
+                <NavBar />
+                <StockTable/>
+            </main>
         </Wrapper>
     )
 };

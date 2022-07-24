@@ -30,7 +30,7 @@ export default function Header() {
         </button>
         </SC.IconContent>
         <SC.UserContent>
-        <h2>{ userEmail }</h2> 
+        <p>{ userEmail }</p> 
         <button onClick={ handleTransaction } value={ btnInfo }>
           { btnInfo }
         </button>
