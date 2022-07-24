@@ -9,6 +9,7 @@ export default function TableHead() {
             { pathname === '/carteira' ? <th>Quantidade</th> : null}
             <th>Valor</th>
             <th>Variação</th>
+            <th>Negociar</th>
         </tr>
     )
 }

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import TableHead from '../TableHead';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { chose } from '../../redux/market';
+import { choose } from '../../redux/market';
+import exchangeIcon from '../../assets/images/exchangeIcon.svg'
 
 import * as SC from './styles'
 
@@ -19,13 +20,13 @@ export default function StockTable() {
     const handleClick = ({target}) => {
         if (pathname === '/carteira') {
             const chosenUserStock = userStocks.find((stock) => stock.simbol === target.value);
-            dispatch(chose(chosenUserStock));
+            dispatch(choose(chosenUserStock));
             navigate('/venda');
         }
 
         if (pathname === '/mercado') {
             const chosenStock = stocks.find((stock) => stock.simbol === target.value);
-            dispatch(chose(chosenStock));
+            dispatch(choose(chosenStock));
             navigate('/compra');
         }
     }
@@ -49,7 +50,7 @@ export default function StockTable() {
             { toRender.stocks.length === 0 
                 ? <SC.PContainer><p>Você ainda não tem ações</p></SC.PContainer>
                 : <SC.PContainer>
-                    <table>
+                    <SC.Table>
                         <TableHead /> 
                         { toRender.stocks.map((stock) => (
                         <tr key={ stock.simbol }>
@@ -57,11 +58,11 @@ export default function StockTable() {
                             { stock.amount ? <td>{ stock.amount }</td> : null }
                             <td>{`R$ ${stock.value}`}</td>
                             <td>{`R$ ${stock.variation}`}</td>
-                            <td><button value={ stock.simbol } onClick={ handleClick }>Negociar</button></td>
+                            <td><button value={ stock.simbol } onClick={ handleClick }><img src={ exchangeIcon } alt='Ícone de negociar'></img></button></td>
                         </tr>
                         ))
                         }
-                    </table>
+                    </SC.Table>
                 </SC.PContainer>
             }
         </> 
