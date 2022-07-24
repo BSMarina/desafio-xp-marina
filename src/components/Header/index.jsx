@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
-// import iconMenu from '../images/iconMenu.svg';
+
 import iconArrowBack from '../../assets/images/iconArrowBack.svg';
+import * as SC from './styles'
 
 export default function Header() {
   const { pathname } = useLocation();
@@ -22,16 +23,18 @@ export default function Header() {
   const userEmail = useSelector((state) => state.user.email)
 
   return (
-      <header
-    //    className={ styles.Header }
-      >
+      <SC.Container>
+        <SC.IconContent>
         <button onClick={ () => navigate(-1) }>
           <img src={ iconArrowBack } alt="Ícone de seta para voltar" />
         </button>
+        </SC.IconContent>
+        <SC.UserContent>
         <h2>{ userEmail }</h2> 
         <button onClick={ handleTransaction } value={ btnInfo }>
           { btnInfo }
         </button>
-      </header>
+        </SC.UserContent>
+      </SC.Container>
   );
 }

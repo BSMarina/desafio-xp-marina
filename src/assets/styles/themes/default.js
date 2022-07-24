@@ -8,7 +8,8 @@ const defaultTheme = {
         elements: {
             main: '#FBC105',
             detail: '#54D088',
-            white: '#FFFFFF'
+            white: '#FFFFFF',
+            dark: '#1F1F1F'
         },
     },
 };
