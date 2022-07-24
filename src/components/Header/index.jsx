@@ -23,6 +23,7 @@ export default function Header() {
   const userEmail = useSelector((state) => state.user.email)
 
   return (
+    <SC.HeaderWrapper>
       <SC.Container>
         <SC.IconContent>
         <button onClick={ () => navigate(-1) }>
@@ -30,11 +31,12 @@ export default function Header() {
         </button>
         </SC.IconContent>
         <SC.UserContent>
-        <h2>{ userEmail }</h2> 
+        <p>{ userEmail }</p> 
         <button onClick={ handleTransaction } value={ btnInfo }>
           { btnInfo }
         </button>
         </SC.UserContent>
       </SC.Container>
+      </SC.HeaderWrapper>
   );
 }

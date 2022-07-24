@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import Header from "../../components/Header";
 import NavBar from "../../components/NavBar";
+import Wrapper from "../../components/shared/Wrapper";
 import StockTable from "../../components/StockTable";
 import stockData from '../../dataMock';
 import { get } from '../../redux/market';
@@ -17,11 +18,13 @@ export default function Wallet() {
 
     return(
         <>
-        <Header />
-        <main>
-            <NavBar />
-            <StockTable/>
-        </main>
+            <Header />
+            <Wrapper>
+                <main>
+                    <NavBar />
+                    <StockTable/>
+                </main>
+            </Wrapper>
         </>
     )
 };

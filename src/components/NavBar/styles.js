@@ -3,8 +3,8 @@ import styled from 'styled-components';
 const Container = styled.ul`
     display: flex;
     width: 100%;
-    margin: 25px 0;
-    padding: 0 4px;
+    padding: 0 8px;
+    position: relative;
 
     li {
         display: flex;
@@ -13,12 +13,15 @@ const Container = styled.ul`
         list-style: none;
 
         button {
-            width: 90%;
-            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.875rem;
             background-color: transparent;
             color: ${({theme}) => theme.colors.elements.white};
             border: none;
-            border-bottom: 1px solid ${({theme}) => theme.colors.elements.white};
+            height: 40px;
+            /* width: 100%; */
+            /* border-bottom: 1px solid ${({theme}) => theme.colors.elements.white}; */
 
             :hover, :active { 
                 color: ${({theme}) => theme.colors.elements.main}95;
@@ -30,13 +33,25 @@ const Container = styled.ul`
     }
 
     .active {
-        color: ${({theme}) => theme.colors.elements.main};
+        color: ${({theme}) => theme.colors.elements.white};
         border-bottom: 1px solid ${({theme}) => theme.colors.elements.main};
     }
 
     .inactive {
-        color: ${({theme}) => theme.colors.elements.white}80;
-        border-bottom: 1px solid ${({theme}) => theme.colors.elements.white}80;
+        color: ${({theme}) => theme.colors.elements.darker};
+        border-bottom: 1px solid transparent;
+    }
+
+    ::before {
+        content:'';
+        display: block;
+        width: 100vw;
+        background-color: ${({theme}) => theme.colors.background.alternativeDarker};
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        z-index: -1;
+        left: -16px;
     }
 `;
 

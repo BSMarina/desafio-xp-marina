@@ -5,6 +5,7 @@ import { login } from '../../redux/user';
 
 import xpIncLogo from '../../assets/images/xpIncLogo.svg';
 import * as SC from './styles';
+import Wrapper from '../../components/shared/Wrapper';
 
 export default function Login() {
   const [inputText, setInputText] = useState({
@@ -45,6 +46,7 @@ export default function Login() {
   };
 
   return (
+    <Wrapper>
     <SC.Container>
         <SC.ImgContent>
           <img src={ xpIncLogo } alt="Logo da XP Inc." />
@@ -56,6 +58,7 @@ export default function Login() {
             onChange={ ({ target }) => handleChange(target) }
             value={ inputText.email }
             placeholder="Email"
+            autoComplete='off'
           />
           <input
             type="password"
@@ -73,5 +76,6 @@ export default function Login() {
           </button>
       </SC.FormContent>
     </SC.Container>
+    </Wrapper>
   );
 }
