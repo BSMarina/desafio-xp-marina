@@ -35,11 +35,10 @@ export const FormContent = styled.form`
     
     input {
         background-color: transparent;
-        border-bottom: 2px solid ${({theme}) => theme.colors.elements.white};
-        /* border-radius: 5px; */
+        border-bottom: 2px solid ${({ theme }) => theme.colors.elements.white};
         border-style: none none solid none;
         box-shadow: none;
-        color: ${({theme}) => theme.colors.elements.white};
+        color: ${({ theme }) => theme.colors.elements.white};
         font-size: 16px;
         height: 36px;
         outline: none;
@@ -48,22 +47,20 @@ export const FormContent = styled.form`
         width: 100%;
         
         :hover, :focus {
-            /* background-color: ${({theme}) => theme.colors.background.alternative}60; */
-            border-bottom: 2px solid ${({theme}) => theme.colors.elements.main};
+            border-bottom: 2px solid ${({ theme }) => theme.colors.elements.main};
         }
 
         :not(:placeholder-shown) {
-            border-bottom: 2px solid ${({theme}) => theme.colors.elements.main};
+            border-bottom: 2px solid ${({ theme }) => theme.colors.elements.main};
         }
 
         ::placeholder {
-            color: ${({theme}) => theme.colors.elements.darker};
+            color: ${({ theme }) => theme.colors.elements.darker};
         }
     }
 
     button {
-        background-color: ${({theme}) => theme.colors.elements.main};
-        /* border-radius: 5px; */
+        background-color: ${({ theme }) => theme.colors.elements.main};
         border-style: none;
         font-size: 16px;
         height: 36px;
@@ -71,12 +68,12 @@ export const FormContent = styled.form`
         width: 100%;
         
         :active {
-            background-color: ${({theme}) => theme.colors.elements.main}70;
+            background-color: ${({ theme }) => theme.colors.elements.main}70;
         }
 
         :disabled{
-            background-color: ${({theme}) => theme.colors.elements.darker};
-            color:  ${({theme}) => theme.colors.elements.dark};
+            background-color: ${({ theme }) => theme.colors.elements.darker};
+            color:  ${({ theme }) => theme.colors.elements.dark};
             cursor: not-allowed;
         }
     }
