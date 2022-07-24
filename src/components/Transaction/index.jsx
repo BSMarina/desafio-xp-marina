@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { buySell, deposit, withdraw } from '../redux/wallet';
-import { get } from '../redux/market';
+import { buySell, deposit, withdraw } from '../../redux/wallet';
+import { get } from '../../redux/market';
+
+import * as SC from './styles'
 
 export default function Transaction() {
     const [inputValue, setInputValue] = useState({ amount: 0});
@@ -27,7 +29,7 @@ export default function Transaction() {
 
         const verifySell = () => {
             if (userStocks.length > 0) {
-                const verifyStock = userStocks.find((stock) => chosenStock.simbol === stock.simbol);
+                const verifyStock = userStocks.find((stock) => chosenStock.symbol === stock.symbol);
                 if (pathname === '/venda' && +(verifyStock.amount) < +(inputValue.amount)) {
                     return false
                 }
@@ -63,7 +65,7 @@ export default function Transaction() {
             }
         };
         validateInputValue();
-    }, [inputValue, chosenStock.simbol, chosenStock.value, pathname, userStocks, userAccount, button.isDisable]);
+    }, [inputValue, chosenStock.symbol, chosenStock.value, pathname, userStocks, userAccount, button.isDisable]);
 
     const handleChange = ({ value }) => {
         setInputValue((prevState) => ({
@@ -77,7 +79,7 @@ export default function Transaction() {
         console.log('format new stock', formatNewStock)
 
         if (userStocks.length !== 0) { 
-            const verifyStock = userStocks.find((stock) => chosenStock.simbol === stock.simbol);
+            const verifyStock = userStocks.find((stock) => chosenStock.symbol === stock.symbol);
             console.log('verify stock', verifyStock)
 
             if (!verifyStock) {
@@ -86,7 +88,7 @@ export default function Transaction() {
                 dispatch(buySell(newUserStocks));
             } else {
                 const formatStock = {amount: +(verifyStock.amount) + +(inputValue.amount), ...chosenStock};
-                const newUserStocks = userStocks.filter((stock) => verifyStock.simbol !== stock.simbol);
+                const newUserStocks = userStocks.filter((stock) => verifyStock.symbol !== stock.symbol);
                 newUserStocks.push(formatStock);
                 dispatch(buySell(newUserStocks));}
         }
@@ -99,9 +101,9 @@ export default function Transaction() {
     }
 
     const sellStock = async () => {
-            const verifyStock = userStocks.find((stock) => chosenStock.simbol === stock.simbol);
+            const verifyStock = userStocks.find((stock) => chosenStock.symbol === stock.symbol);
             const formatStock = {amount: +(verifyStock.amount) - +(inputValue.amount), ...chosenStock};
-            const newUserStocks = userStocks.filter((stock) => verifyStock.simbol !== stock.simbol);
+            const newUserStocks = userStocks.filter((stock) => verifyStock.symbol !== stock.symbol);
             
             if (+(verifyStock.amount) > +(inputValue.amount)) {
                 newUserStocks.push(formatStock);
@@ -129,13 +131,13 @@ export default function Transaction() {
         e.preventDefault()
         if (pathname === '/compra') {
             buyStock();
-            const filteredStocks = stocks.filter((stock) => stock.simbol !== chosenStock.simbol);
+            const filteredStocks = stocks.filter((stock) => stock.symbol !== chosenStock.symbol);
             dispatch(get(filteredStocks));
         }
 
         if (pathname === '/venda') {
             sellStock();
-            const filteredStocks = stocks.filter((stock) => stock.simbol !== chosenStock.simbol);
+            const filteredStocks = stocks.filter((stock) => stock.symbol !== chosenStock.symbol);
             dispatch(get(filteredStocks));
         }
 
@@ -150,14 +152,20 @@ export default function Transaction() {
     }
 
     return (
-        <form>
-            <input 
-                type='number'
-                placeholder='Insira o valor'
-                onChange={ ({ target }) => handleChange(target) }
-                value={ inputValue.amount }
-            />        
+        <SC.Container>
+            <div>
+            <label htmlFor='amountInput'>
+                Escolha a quantia
+                <input
+                    name='amountInput'
+                    type='number'
+                    placeholder='0'
+                    onChange={ ({ target }) => handleChange(target) }
+                    value={ inputValue.amount }
+                />
+            </label>
+            </div>        
             <button onClick={ handleClick } disabled={ button.isDisable }>{ button.btnText }</button>
-        </form>
+        </SC.Container>
     )
 }

@@ -6,9 +6,10 @@ export default function TableHead() {
     return (
         <tr>
             <th>Ação</th>
-            { pathname === '/carteira' ? <th>Quantidade</th> : null}
+            { pathname === '/carteira' ? <th>Qtd.</th> : null}
             <th>Valor</th>
-            <th>Variação</th>
+            <th>Alta/Baixa</th>
+            <th></th>
         </tr>
     )
 }

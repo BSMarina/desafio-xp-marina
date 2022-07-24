@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import xpincLogo from '../images/xpincLogo.png'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { login } from '../redux/user';
+import { login } from '../../redux/user';
+
+import xpIncLogo from '../../assets/images/xpIncLogo.svg';
+import * as SC from './styles';
+import Wrapper from '../../components/shared/Wrapper';
 
 export default function Login() {
   const [inputText, setInputText] = useState({
@@ -43,23 +46,19 @@ export default function Login() {
   };
 
   return (
-    <div
-    //  className={ styles.FormContainer }
-     >
-      <form
-    //    className={ styles.Form }
-       >
-        <div
-        //  className={ styles.TittleApp }
-         >
-          <img src={ xpincLogo } alt="Logo da XP Inc." />
-        </div>
+    <Wrapper>
+    <SC.Container>
+        <SC.ImgContent>
+          <img src={ xpIncLogo } alt="Logo da XP Inc." />
+        </SC.ImgContent>
+      <SC.FormContent>
           <input
             type="text"
             name="email"
             onChange={ ({ target }) => handleChange(target) }
             value={ inputText.email }
             placeholder="Email"
+            autoComplete='off'
           />
           <input
             type="password"
@@ -75,7 +74,8 @@ export default function Login() {
           onClick={ handleClick }>
             Login
           </button>
-      </form>
-    </div>
+      </SC.FormContent>
+    </SC.Container>
+    </Wrapper>
   );
 }
