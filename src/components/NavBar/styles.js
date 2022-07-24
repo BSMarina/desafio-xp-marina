@@ -21,8 +21,9 @@ const Container = styled.ul`
             border-bottom: 1px solid ${({theme}) => theme.colors.elements.white};
 
             :hover, :active { 
-                color: ${({theme}) => theme.colors.elements.dark};
-                border-bottom: 1px solid ${({theme}) => theme.colors.elements.dark};
+                color: ${({theme}) => theme.colors.elements.main}95;
+                border-bottom: 1px solid ${({theme}) => theme.colors.elements.main}95;
+                transition: all 0.1s ease-in;
             }
 
         }
@@ -31,6 +32,11 @@ const Container = styled.ul`
     .active {
         color: ${({theme}) => theme.colors.elements.main};
         border-bottom: 1px solid ${({theme}) => theme.colors.elements.main};
+    }
+
+    .inactive {
+        color: ${({theme}) => theme.colors.elements.white}80;
+        border-bottom: 1px solid ${({theme}) => theme.colors.elements.white}80;
     }
 `;
 
