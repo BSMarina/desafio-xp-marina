@@ -5,7 +5,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    justify-content: space-around;
+    justify-content: space-between;
     /* max-width: 1980px;
     width: 100vw; */
     padding: 0 16px;
@@ -15,7 +15,14 @@ export const ImgContent = styled.div`
     align-items: center;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+    flex-grow: 1;
+
+    img {
+        max-width: 160px;
+    }
 `;
 
 export const FormContent = styled.form`
@@ -52,7 +59,7 @@ export const FormContent = styled.form`
 
     button {
         background-color: ${({theme}) => theme.colors.elements.main};
-        border-radius: 5px;
+        /* border-radius: 5px; */
         border-style: none;
         font-size: 16px;
         height: 36px;
@@ -65,6 +72,7 @@ export const FormContent = styled.form`
 
         :disabled{
             background-color: ${({theme}) => theme.colors.elements.darker};
+            color:  ${({theme}) => theme.colors.elements.dark};
             cursor: not-allowed;
         }
     }
