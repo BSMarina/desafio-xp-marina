@@ -19,13 +19,13 @@ export default function StockTable() {
 
     const handleClick = ({target}) => {
         if (pathname === '/carteira') {
-            const chosenUserStock = userStocks.find((stock) => stock.simbol === target.value);
+            const chosenUserStock = userStocks.find((stock) => stock.symbol === target.value);
             dispatch(choose(chosenUserStock));
             navigate('/venda');
         }
 
         if (pathname === '/mercado') {
-            const chosenStock = stocks.find((stock) => stock.simbol === target.value);
+            const chosenStock = stocks.find((stock) => stock.symbol === target.value);
             dispatch(choose(chosenStock));
             navigate('/compra');
         }
@@ -53,12 +53,12 @@ export default function StockTable() {
                     <SC.Table>
                         <TableHead /> 
                         { toRender.stocks.map((stock) => (
-                        <tr key={ stock.simbol }>
-                            <td>{stock.simbol}</td>
+                        <tr key={ stock.symbol }>
+                            <td>{stock.symbol}</td>
                             { stock.amount ? <td>{ stock.amount }</td> : null }
                             <td>{`R$ ${stock.value}`}</td>
                             <td className={ stock.variation.slice(0, 1) === '+' ?'positive' :'negative'}>{`R$ ${stock.variation}`}</td>
-                            <td><button value={ stock.simbol } onClick={ handleClick }><img src={ exchangeIcon } alt='Ícone de negociar'></img></button></td>
+                            <td><button value={ stock.symbol } onClick={ handleClick }><img src={ exchangeIcon } alt='Ícone de negociar'></img></button></td>
                         </tr>
                         ))
                         }

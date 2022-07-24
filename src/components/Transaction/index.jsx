@@ -27,7 +27,7 @@ export default function Transaction() {
 
         const verifySell = () => {
             if (userStocks.length > 0) {
-                const verifyStock = userStocks.find((stock) => chosenStock.simbol === stock.simbol);
+                const verifyStock = userStocks.find((stock) => chosenStock.symbol === stock.symbol);
                 if (pathname === '/venda' && +(verifyStock.amount) < +(inputValue.amount)) {
                     return false
                 }
@@ -63,7 +63,7 @@ export default function Transaction() {
             }
         };
         validateInputValue();
-    }, [inputValue, chosenStock.simbol, chosenStock.value, pathname, userStocks, userAccount, button.isDisable]);
+    }, [inputValue, chosenStock.symbol, chosenStock.value, pathname, userStocks, userAccount, button.isDisable]);
 
     const handleChange = ({ value }) => {
         setInputValue((prevState) => ({
@@ -77,7 +77,7 @@ export default function Transaction() {
         console.log('format new stock', formatNewStock)
 
         if (userStocks.length !== 0) { 
-            const verifyStock = userStocks.find((stock) => chosenStock.simbol === stock.simbol);
+            const verifyStock = userStocks.find((stock) => chosenStock.symbol === stock.symbol);
             console.log('verify stock', verifyStock)
 
             if (!verifyStock) {
@@ -86,7 +86,7 @@ export default function Transaction() {
                 dispatch(buySell(newUserStocks));
             } else {
                 const formatStock = {amount: +(verifyStock.amount) + +(inputValue.amount), ...chosenStock};
-                const newUserStocks = userStocks.filter((stock) => verifyStock.simbol !== stock.simbol);
+                const newUserStocks = userStocks.filter((stock) => verifyStock.symbol !== stock.symbol);
                 newUserStocks.push(formatStock);
                 dispatch(buySell(newUserStocks));}
         }
@@ -99,9 +99,9 @@ export default function Transaction() {
     }
 
     const sellStock = async () => {
-            const verifyStock = userStocks.find((stock) => chosenStock.simbol === stock.simbol);
+            const verifyStock = userStocks.find((stock) => chosenStock.symbol === stock.symbol);
             const formatStock = {amount: +(verifyStock.amount) - +(inputValue.amount), ...chosenStock};
-            const newUserStocks = userStocks.filter((stock) => verifyStock.simbol !== stock.simbol);
+            const newUserStocks = userStocks.filter((stock) => verifyStock.symbol !== stock.symbol);
             
             if (+(verifyStock.amount) > +(inputValue.amount)) {
                 newUserStocks.push(formatStock);
@@ -129,13 +129,13 @@ export default function Transaction() {
         e.preventDefault()
         if (pathname === '/compra') {
             buyStock();
-            const filteredStocks = stocks.filter((stock) => stock.simbol !== chosenStock.simbol);
+            const filteredStocks = stocks.filter((stock) => stock.symbol !== chosenStock.symbol);
             dispatch(get(filteredStocks));
         }
 
         if (pathname === '/venda') {
             sellStock();
-            const filteredStocks = stocks.filter((stock) => stock.simbol !== chosenStock.simbol);
+            const filteredStocks = stocks.filter((stock) => stock.symbol !== chosenStock.symbol);
             dispatch(get(filteredStocks));
         }
 
