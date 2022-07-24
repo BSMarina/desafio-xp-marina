@@ -39,7 +39,7 @@ export const FormContent = styled.form`
         /* border-radius: 5px; */
         border-style: none none solid none;
         box-shadow: none;
-        color: ${({theme}) => theme.colors.elements.main};
+        color: ${({theme}) => theme.colors.elements.white};
         font-size: 16px;
         height: 36px;
         outline: none;
@@ -49,6 +49,10 @@ export const FormContent = styled.form`
         
         :hover, :focus {
             /* background-color: ${({theme}) => theme.colors.background.alternative}60; */
+            border-bottom: 2px solid ${({theme}) => theme.colors.elements.main};
+        }
+
+        :not(:placeholder-shown) {
             border-bottom: 2px solid ${({theme}) => theme.colors.elements.main};
         }
 

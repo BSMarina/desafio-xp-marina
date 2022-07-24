@@ -56,6 +56,7 @@ export default function Login() {
             onChange={ ({ target }) => handleChange(target) }
             value={ inputText.email }
             placeholder="Email"
+            autoComplete='off'
           />
           <input
             type="password"
