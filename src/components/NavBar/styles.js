@@ -11,7 +11,7 @@ const Container = styled.ul`
         justify-content: center;
         width: 50%;
         list-style: none;
-/* 
+
         button {
             width: 90%;
             font-size: 16px;
@@ -26,7 +26,7 @@ const Container = styled.ul`
                 border-bottom: 1px solid ${({theme}) => theme.colors.elements.main};
             }
 
-        } */
+        }
     }
 `;
 
