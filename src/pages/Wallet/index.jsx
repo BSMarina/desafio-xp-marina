@@ -17,12 +17,14 @@ export default function Wallet() {
     })
 
     return(
-        <Wrapper>
+        <>
             <Header />
-            <main>
-                <NavBar />
-                <StockTable/>
-            </main>
-        </Wrapper>
+            <Wrapper>
+                <main>
+                    <NavBar />
+                    <StockTable/>
+                </main>
+            </Wrapper>
+        </>
     )
 };

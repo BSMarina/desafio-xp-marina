@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
+export const HeaderWrapper = styled.div`
+    background-color: ${({theme}) => theme.colors.background.alternativeDarker};
+`;
+
 export const Container = styled.header`
-    background-color: ${({theme}) => theme.colors.background.main};
+    padding: 0 16px;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -16,7 +20,7 @@ export const IconContent = styled.div`
     justify-content: center;
     
     button {
-        background-color: ${({theme}) => theme.colors.background.main};
+        background-color: transparent;
         border: none;
         border-style: none;
         box-shadow: none;
