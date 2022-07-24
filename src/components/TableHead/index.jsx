@@ -4,12 +4,12 @@ import { useLocation } from 'react-router-dom';
 export default function TableHead() {
     const { pathname } = useLocation();
     return (
-        <li>
-            <div>Ação</div>
-            { pathname === '/carteira' ? <div>Quantidade</div> : null}
-            <div>Valor</div>
-            <div>Variação</div>
-            <div>Negociar</div>
-        </li>
+        <tr>
+            <th>Ação</th>
+            { pathname === '/carteira' ? <th>Quantidade</th> : null}
+            <th>Valor</th>
+            <th>Variação</th>
+            <th>Negociar</th>
+        </tr>
     )
 }
