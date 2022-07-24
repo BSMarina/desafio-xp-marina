@@ -51,10 +51,10 @@ export default function NavBar() {
     return (
         <Container>
             <li>
-                <button onClick={ () => navigate(navType.typeA) }>{ navType.nameA }</button>
+                <button className={ pathname === navType.typeA ? 'active' : 'inactive '} onClick={ () => navigate(navType.typeA) }>{ navType.nameA }</button>
             </li>
             <li>
-                <button onClick={ () => navigate(navType.typeB) }>{ navType.nameB }</button>
+                <button className={ pathname === navType.typeB ? 'active' : 'inactive '} onClick={ () => navigate(navType.typeB) }>{ navType.nameB }</button>
             </li>
         </Container>
     );

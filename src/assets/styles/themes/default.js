@@ -3,13 +3,13 @@ const defaultTheme = {
         background: {
             main: '#000000',
             alternative: '#CCCCCC',
-            alternativeDarker: '#8d9185',
+            alternativeDarker: '#1F1F1F',
         },
         elements: {
             main: '#FBC105',
             detail: '#54D088',
             white: '#FFFFFF',
-            dark: '#1F1F1F'
+            dark: '#8d9185'
         },
     },
 };

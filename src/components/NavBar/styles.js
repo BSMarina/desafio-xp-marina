@@ -21,12 +21,16 @@ const Container = styled.ul`
             border-bottom: 1px solid ${({theme}) => theme.colors.elements.white};
 
             :hover, :active { 
-                color: ${({theme}) => theme.colors.elements.main};
-                border: none;
-                border-bottom: 1px solid ${({theme}) => theme.colors.elements.main};
+                color: ${({theme}) => theme.colors.elements.dark};
+                border-bottom: 1px solid ${({theme}) => theme.colors.elements.dark};
             }
 
         }
+    }
+
+    .active {
+        color: ${({theme}) => theme.colors.elements.main};
+        border-bottom: 1px solid ${({theme}) => theme.colors.elements.main};
     }
 `;
 
