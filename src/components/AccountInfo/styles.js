@@ -9,19 +9,19 @@ export const Container = styled.div`
     width: 100%;
 `;
 
-// export const AccountContent = styled.div`
-//     display: flex;
-//     align-items: center;
-//     column-gap: 8px;
+export const AccountContent = styled.div`
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
     
-//     img {
-//         filter: invert(83%) sepia(53%) saturate(3701%) hue-rotate(1deg) brightness(105%) contrast(97%);
-//     }
+    img {
+        filter: invert(83%) sepia(53%) saturate(3701%) hue-rotate(1deg) brightness(105%) contrast(97%);
+    }
 
-//     h3 {
-//     font-weight: 400;
-//     }
-// `;
+    h3 {
+    font-weight: 400;
+    }
+`;
 
 // export const ValueContent = styled.div`
 //     display: flex;
