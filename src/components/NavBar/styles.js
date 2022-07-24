@@ -6,12 +6,12 @@ const Container = styled.ul`
     margin: 25px 0;
     padding: 0 4px;
 
-    /* li {
+    li {
         display: flex;
         justify-content: center;
         width: 50%;
         list-style: none;
-
+/* 
         button {
             width: 90%;
             font-size: 16px;
@@ -27,7 +27,7 @@ const Container = styled.ul`
             }
 
         } */
-    /* } */
+    }
 `;
 
 export default Container;
