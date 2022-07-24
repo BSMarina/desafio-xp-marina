@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { buySell, deposit, withdraw } from '../../redux/wallet';
 import { get } from '../../redux/market';
 
+import * as SC from './styles'
+
 export default function Transaction() {
     const [inputValue, setInputValue] = useState({ amount: 0});
     const [button, setButton] = useState({ isDisable: true, btnText: 'Confirmar' });
@@ -150,14 +152,20 @@ export default function Transaction() {
     }
 
     return (
-        <form>
-            <input 
-                type='number'
-                placeholder='Insira o valor'
-                onChange={ ({ target }) => handleChange(target) }
-                value={ inputValue.amount }
-            />        
+        <SC.Container>
+            <div>
+            <label htmlFor='amountInput'>
+                Escolha a quantia
+                <input
+                    name='amountInput'
+                    type='number'
+                    placeholder='0'
+                    onChange={ ({ target }) => handleChange(target) }
+                    value={ inputValue.amount }
+                />
+            </label>
+            </div>        
             <button onClick={ handleClick } disabled={ button.isDisable }>{ button.btnText }</button>
-        </form>
+        </SC.Container>
     )
 }
