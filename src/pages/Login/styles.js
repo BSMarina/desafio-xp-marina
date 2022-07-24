@@ -44,6 +44,10 @@ export const FormContent = styled.form`
             /* background-color: ${({theme}) => theme.colors.background.alternative}60; */
             border-bottom: 2px solid ${({theme}) => theme.colors.elements.main};
         }
+
+        ::placeholder {
+            color: ${({theme}) => theme.colors.elements.darker};
+        }
     }
 
     button {
@@ -60,7 +64,7 @@ export const FormContent = styled.form`
         }
 
         :disabled{
-            background-color: ${({theme}) => theme.colors.background.alternativeDarker};
+            background-color: ${({theme}) => theme.colors.elements.darker};
             cursor: not-allowed;
         }
     }

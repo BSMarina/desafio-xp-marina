@@ -9,7 +9,8 @@ const defaultTheme = {
             main: '#FBC105',
             detail: '#54D088',
             white: '#FFFFFF',
-            dark: '#8d9185'
+            dark: '#8d9185',
+            darker: '#636363',
         },
     },
 };
