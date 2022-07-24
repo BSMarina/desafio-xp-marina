@@ -56,7 +56,7 @@ export const Container = styled.form`
         }
     }
 
-    /* button {
+    button {
         height: 40px;
         width: 100%;
         background-color: ${({theme}) => theme.colors.elements.main};
@@ -72,6 +72,6 @@ export const Container = styled.form`
             color:  ${({theme}) => theme.colors.elements.dark};
             cursor: not-allowed;
         }
-    } */
+    }
 
 `;
