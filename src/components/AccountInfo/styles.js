@@ -5,7 +5,7 @@ export const Container = styled.div`
     border: 1px solid ${({ theme }) => theme.colors.background.alternativeDarker};
     border-radius: 4px;
     padding: 16px;
-    margin: 8px auto;
+    margin: 16px auto;
     width: 100%;
 `;
 
