@@ -23,7 +23,7 @@ export const GridContainer = styled.dl`
     dt {
         font-size: 0.675rem;
         text-transform: uppercase;
-        color: ${({theme}) => theme.colors.elements.dark};
+        color: ${({ theme }) => theme.colors.elements.dark};
     }
 
     dt:nth-of-type(1) { //dt ação

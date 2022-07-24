@@ -16,7 +16,7 @@ export default function Login() {
   const [button, setButton] = useState({ isDisable: true });
 
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const validateLogin = () => {
@@ -31,7 +31,6 @@ export default function Login() {
     validateLogin();
   }, [inputText]);
 
-
   const handleChange = ({ name, value }) => {
     setInputText((prevState) => ({
       ...prevState,
@@ -41,41 +40,42 @@ export default function Login() {
 
   const handleClick = () => {
     const { email } = inputText;
-    dispatch(login(email))
-    navigate('/carteira')
+    dispatch(login(email));
+    navigate('/carteira');
   };
 
   return (
     <Wrapper>
-    <SC.Container>
+      <SC.Container>
         <SC.ImgContent>
-          <img src={ xpIncLogo } alt="Logo da XP Inc." />
+          <img src={xpIncLogo} alt="Logo da XP Inc." />
         </SC.ImgContent>
-      <SC.FormContent>
+        <SC.FormContent>
           <input
             type="text"
             name="email"
-            onChange={ ({ target }) => handleChange(target) }
-            value={ inputText.email }
+            onChange={({ target }) => handleChange(target)}
+            value={inputText.email}
             placeholder="Email"
-            autoComplete='off'
+            autoComplete="off"
           />
           <input
             type="password"
             name="password"
-            onChange={ ({ target }) => handleChange(target) }
-            value={ inputText.password }
+            onChange={({ target }) => handleChange(target)}
+            value={inputText.password}
             placeholder="Senha"
             autoComplete="off"
           />
-        <button
-          disabled={ button.isDisable }
-          type="button"
-          onClick={ handleClick }>
+          <button
+            disabled={button.isDisable}
+            type="button"
+            onClick={handleClick}
+          >
             Login
           </button>
-      </SC.FormContent>
-    </SC.Container>
+        </SC.FormContent>
+      </SC.Container>
     </Wrapper>
   );
 }

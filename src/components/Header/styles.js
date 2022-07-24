@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderWrapper = styled.div`
-    background-color: ${({theme}) => theme.colors.background.alternativeDarker};
+    background-color: ${({ theme }) => theme.colors.background.alternativeDarker};
 `;
 
 export const Container = styled.header`
@@ -37,7 +37,7 @@ export const IconContent = styled.div`
 `;
 
 export const UserContent = styled.div`
-    color: ${({theme}) => theme.colors.elements.white};
+    color: ${({ theme }) => theme.colors.elements.white};
     display: flex;
     align-items: center;
     column-gap: 8px;
@@ -47,7 +47,7 @@ export const UserContent = styled.div`
     }
 
     button {
-        background-color: ${({theme}) => theme.colors.elements.main};
+        background-color: ${({ theme }) => theme.colors.elements.main};
         border-style: none;
         padding: 0 8px;
         outline: none;
@@ -56,7 +56,7 @@ export const UserContent = styled.div`
         letter-spacing: 0.5px;
         
         :active {
-            background-color: ${({theme}) => theme.colors.elements.main}70;
+            background-color: ${({ theme }) => theme.colors.elements.main}70;
         }
     }
 `;

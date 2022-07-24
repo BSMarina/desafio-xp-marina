@@ -17,15 +17,13 @@ const Container = styled.ul`
             letter-spacing: 0.5px;
             font-size: 0.875rem;
             background-color: transparent;
-            color: ${({theme}) => theme.colors.elements.white};
+            color: ${({ theme }) => theme.colors.elements.white};
             border: none;
             height: 40px;
-            /* width: 100%; */
-            /* border-bottom: 1px solid ${({theme}) => theme.colors.elements.white}; */
 
             :hover, :active { 
-                color: ${({theme}) => theme.colors.elements.main}95;
-                border-bottom: 1px solid ${({theme}) => theme.colors.elements.main}95;
+                color: ${({ theme }) => theme.colors.elements.main}95;
+                border-bottom: 1px solid ${({ theme }) => theme.colors.elements.main}95;
                 transition: all 0.1s ease-in;
             }
 
@@ -33,12 +31,12 @@ const Container = styled.ul`
     }
 
     .active {
-        color: ${({theme}) => theme.colors.elements.white};
-        border-bottom: 1px solid ${({theme}) => theme.colors.elements.main};
+        color: ${({ theme }) => theme.colors.elements.white};
+        border-bottom: 1px solid ${({ theme }) => theme.colors.elements.main};
     }
 
     .inactive {
-        color: ${({theme}) => theme.colors.elements.darker};
+        color: ${({ theme }) => theme.colors.elements.darker};
         border-bottom: 1px solid transparent;
     }
 
@@ -46,7 +44,7 @@ const Container = styled.ul`
         content:'';
         display: block;
         width: 100vw;
-        background-color: ${({theme}) => theme.colors.background.alternativeDarker};
+        background-color: ${({ theme }) => theme.colors.background.alternativeDarker};
         position: absolute;
         bottom: 0;
         height: 1px;

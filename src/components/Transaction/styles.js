@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.form`
+const Container = styled.form`
     flex-grow: 1;
     align-items: center;
     justify-content: center;
@@ -20,7 +20,7 @@ export const Container = styled.form`
     }
 
     label {
-        color: ${({theme}) => theme.colors.elements.darker};
+        color: ${({ theme }) => theme.colors.elements.darker};
     }
 
     input {
@@ -30,14 +30,14 @@ export const Container = styled.form`
         font-size: 3.75rem;
         background-color: transparent;
         border: none;
-        color: ${({theme}) => theme.colors.elements.white};
+        color: ${({ theme }) => theme.colors.elements.white};
         position: relative;
 
         /* :before {
             content: 'Escolha a quantidade';
             position: absolute;
             text-transform: uppercase;
-            color: ${({theme}) => theme.colors.elements.darker};
+            color: ${({ theme }) => theme.colors.elements.darker};
             display: flex;
             align-items: center;
             justify-content: center;
@@ -46,7 +46,7 @@ export const Container = styled.form`
         } */
 
         ::placeholder {
-            color: ${({theme}) => theme.colors.elements.darker};
+            color: ${({ theme }) => theme.colors.elements.darker};
             font-weight: 700;
         }
 
@@ -59,19 +59,20 @@ export const Container = styled.form`
     button {
         height: 40px;
         width: 100%;
-        background-color: ${({theme}) => theme.colors.elements.main};
+        background-color: ${({ theme }) => theme.colors.elements.main};
         border-style: none;
         font-size: 16px;
 
         :active {
-            background-color: ${({theme}) => theme.colors.elements.main}70;
+            background-color: ${({ theme }) => theme.colors.elements.main}70;
         }
 
         :disabled{
-            background-color: ${({theme}) => theme.colors.elements.darker};
-            color:  ${({theme}) => theme.colors.elements.dark};
+            background-color: ${({ theme }) => theme.colors.elements.darker};
+            color:  ${({ theme }) => theme.colors.elements.dark};
             cursor: not-allowed;
         }
     }
 
 `;
+export default Container;

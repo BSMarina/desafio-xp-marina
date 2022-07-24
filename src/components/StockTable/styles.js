@@ -2,7 +2,7 @@ import styled from 'styled-components';
 // import test from '../../assets/images/test.png'
 
 export const PContainer = styled.div`
-    background-color: ${({theme}) => theme.colors.background.alternativeDarker};
+    background-color: ${({ theme }) => theme.colors.background.alternativeDarker};
     display: flex;
     height: 100%;
     flex-grow: 1;
@@ -15,13 +15,13 @@ export const PContainer = styled.div`
     padding: 16px;
 
     p {
-        color: ${({theme}) => theme.colors.elements.white};
+        color: ${({ theme }) => theme.colors.elements.white};
     }
 `;
 
 export const Table = styled.table`
     width: 100%;
-    color: ${({theme}) => theme.colors.elements.white};
+    color: ${({ theme }) => theme.colors.elements.white};
     border-spacing: 4px;
 
     tr {
@@ -50,7 +50,7 @@ export const Table = styled.table`
             width: 100%;
             position: absolute;
             bottom: 0;
-            background-color: ${({theme}) => theme.colors.elements.white}20;
+            background-color: ${({ theme }) => theme.colors.elements.white}20;
             left: 0;
         }
         
@@ -60,13 +60,13 @@ export const Table = styled.table`
             text-align: left;
             font-size: 0.675rem;
             font-weight: 400;
-            color: ${({theme}) => theme.colors.elements.darker};
+            color: ${({ theme }) => theme.colors.elements.darker};
         }
     }
 
 
     button {
-        background-color: ${({theme}) => theme.colors.elements.main};
+        background-color: ${({ theme }) => theme.colors.elements.main};
         border: none;
         display: flex;
         justify-content: center;
@@ -76,11 +76,11 @@ export const Table = styled.table`
     }
 
     .positive {
-        color: ${({theme}) => theme.colors.stocks.positive}
+        color: ${({ theme }) => theme.colors.stocks.positive}
     }
 
     .negative {
-        color: ${({theme}) => theme.colors.stocks.negative}
+        color: ${({ theme }) => theme.colors.stocks.negative}
     }
 
 `;

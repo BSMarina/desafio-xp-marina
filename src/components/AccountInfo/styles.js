@@ -30,7 +30,7 @@ export const ValueContent = styled.div`
     h3 {
         font-size: 0.675rem;
         text-transform: uppercase;
-        color: ${({theme}) => theme.colors.elements.dark};
+        color: ${({ theme }) => theme.colors.elements.dark};
     }
 
     p {
