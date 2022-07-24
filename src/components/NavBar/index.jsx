@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Container from './styles';
 
 export default function NavBar() {
     
@@ -48,13 +49,13 @@ export default function NavBar() {
 
     const navigate = useNavigate();
     return (
-        <ul>
+        <Container>
             <li>
-                <button onClick={ () => navigate(navType.typeA) }>{ navType.nameA }</button>
+                <button className={ pathname === navType.typeA ? 'active' : 'inactive '} onClick={ () => navigate(navType.typeA) }>{ navType.nameA }</button>
             </li>
             <li>
-                <button onClick={ () => navigate(navType.typeB) }>{ navType.nameB }</button>
+                <button className={ pathname === navType.typeB ? 'active' : 'inactive '} onClick={ () => navigate(navType.typeB) }>{ navType.nameB }</button>
             </li>
-        </ul>
+        </Container>
     );
 }
