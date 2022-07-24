@@ -24,9 +24,11 @@ export default function Header() {
 
   return (
       <SC.Container>
+        <SC.IconContent>
         <button onClick={ () => navigate(-1) }>
           <img src={ iconArrowBack } alt="Ícone de seta para voltar" />
         </button>
+        </SC.IconContent>
         <SC.UserContent>
         <h2>{ userEmail }</h2> 
         <button onClick={ handleTransaction } value={ btnInfo }>
