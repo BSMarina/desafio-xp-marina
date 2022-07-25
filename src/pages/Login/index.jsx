@@ -57,7 +57,7 @@ export default function Login() {
             onChange={({ target }) => handleChange(target)}
             value={inputText.email}
             placeholder="Email"
-            autoComplete="off"
+            // autoComplete="off"
           />
           <input
             type="password"
@@ -65,7 +65,7 @@ export default function Login() {
             onChange={({ target }) => handleChange(target)}
             value={inputText.password}
             placeholder="Senha"
-            autoComplete="off"
+            // autoComplete="off"
           />
           <button
             disabled={button.isDisable}
