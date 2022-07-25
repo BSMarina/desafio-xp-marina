@@ -13,6 +13,9 @@ O código contido neste reposítório contempla apenas o front-end do aplicativo
 
 ---
 
+### Para ver o aplicativo no ar
+
+Está disponível aqui: https://desafio-xp-marina.vercel.app/
 
 ### Para executar o aplicativo localmente
 
@@ -23,7 +26,7 @@ O código contido neste reposítório contempla apenas o front-end do aplicativo
 Pronto! O programa abrirá em seu navegador.
 
 #### Algumas infomações para usar o aplicativo:
-- Na tela de login, o input de email espera uma string no formato mínimo 'xxxx@xxxx.com' (com mais de três caracteres antes e depois do @ e com o .com) e o input de senha espera mais de seis caracteres;
+- Na tela de login, o input de email espera uma string no formato mínimo 'xxxx@xxxx.com' (com mais de dois caracteres antes e depois do @ e com o .com) e o input de senha espera mais de seis caracteres;
 - Para comprar ações ou sacar valores, é preciso ter a quantia necessária na conta. Do contrário, os botões do input de valor não será habilitado;
 - Esse botão também fica desabilitado em outras situações, como tentar vender mais ações do que se tem ou tentar comprar ações em quantias que extrapolem o saldo;
 ---
