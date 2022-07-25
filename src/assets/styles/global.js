@@ -5,7 +5,7 @@ export default createGlobalStyle`
         flex-direction: column;
         display: flex;
         flex-grow: 1;
-        min-height: 100vh;
+        min-height: 100vh - 56px;
     }
 
    * {
