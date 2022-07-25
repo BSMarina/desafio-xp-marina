@@ -73,6 +73,8 @@ export const Table = styled.table`
         height: 24px;
         width: 24px;
         align-items: center;
+        font-size: 16px;
+        line-height: 0px;
     }
 
     .positive {
