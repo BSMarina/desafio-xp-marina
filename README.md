@@ -39,6 +39,7 @@ A etapa seguinte foi codar, e escolhi desenvolver o projeto com React em JavaScr
 
 Para a estilização, me inspirei no aplicativo de celular da XP, o XP Investimentos, mas tentei manter tudo em dark mode. Também tentei deixar tudo o mais responsivo que consegui, estilizando as telas seguindo a convenção mobile first (projetei na resolução 320x480);
 
+![alt text]('./src/assets/images/appPreview.png')
 
 
 ### Considerações finais
