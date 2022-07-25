@@ -11,6 +11,12 @@ const Wrapper = styled.div`
         display: flex;
         flex-direction: column;
     }
+
+    @media (min-width: 768px) {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+    }
 `;
 
 export default Wrapper;

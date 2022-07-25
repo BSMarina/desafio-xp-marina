@@ -5,7 +5,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    justify-content: space-between;
+    justify-content: center;
     /* max-width: 1980px;
     width: 100vw; */
     padding: 0 16px;
@@ -18,7 +18,6 @@ export const ImgContent = styled.div`
     height: 100%;
     justify-content: center;
     width: 100%;
-    flex-grow: 1;
 
     img {
         max-width: 160px;
@@ -63,7 +62,7 @@ export const FormContent = styled.form`
         background-color: ${({ theme }) => theme.colors.elements.main};
         border-style: none;
         font-size: 16px;
-        height: 36px;
+        height: 40px;
         margin-top: 10px;
         width: 100%;
         

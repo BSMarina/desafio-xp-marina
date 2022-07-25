@@ -5,6 +5,7 @@ const Container = styled.ul`
     width: 100%;
     padding: 0 8px;
     position: relative;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.background.alternativeDarker};
 
     li {
         display: flex;
@@ -39,18 +40,7 @@ const Container = styled.ul`
         color: ${({ theme }) => theme.colors.elements.darker};
         border-bottom: 1px solid transparent;
     }
-
-    ::before {
-        content:'';
-        display: block;
-        width: 100vw;
-        background-color: ${({ theme }) => theme.colors.background.alternativeDarker};
-        position: absolute;
-        bottom: 0;
-        height: 1px;
-        z-index: -1;
-        left: -16px;
-    }
+    
 `;
 
 export default Container;
